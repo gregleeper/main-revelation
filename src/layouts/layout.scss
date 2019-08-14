@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Tahoma", sans-serif;
+}
+
+:root {
+  --hrcBlue: #4d59ee;
+  --hrcBlueInvert: #fff;
+  --hrcRed: #d60e0e;
+  --hrcGray: #9b9999;
+}
+.deskTel {
+  display: none;
+  @media (min-width: 768px) {
+    display: inherit;
+  }
+}
+
+.mobileTel {
+  text-align: center;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
