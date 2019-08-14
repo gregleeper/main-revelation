@@ -85,7 +85,7 @@ const Navigation = ({ siteTitle }) => {
         <Box ml="auto" style={{ marginRight: '2rem' }}>
           <H1 to="/cart">
             {quantity !== 0 && <CartCounter>{quantity}</CartCounter>}
-            Cart 🛍
+            🛍
           </H1>
         </Box>
       </Container>
