@@ -33,7 +33,7 @@ const Cart = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-4">
+        <div className="col-lg-4 col-md-4 col-sm-6">
           {line_items.length > 0 ? (
             <button className="btn btn-primary" onClick={handleCheckout}>
               Check out
@@ -48,9 +48,9 @@ const Cart = () => {
             </button>
           )}
         </div>
-        <div className="alert alert-info col-8">
-          Use code <strong>INPERSON</strong> for free in-person pickup at 1000 S
-          Monroe in Hugoton, KS.
+        <div className="alert alert-info col-lg-8 col-md-8 col-sm-6">
+          Use code <strong>PLAYERDELIVERY</strong> for free delivery from a
+          Hugoton Volleyball player.
         </div>
       </div>
     </div>
