@@ -3,10 +3,9 @@ import PropTypes from 'prop-types'
 
 const VariantSelector = props => {
   const { option } = props
-  console.log(props)
   return (
-    <>
-      <div className="form-group col-lg-6">
+    <div className="col-6">
+      <div className="form-group">
         <label htmlFor={option.name} for={option.id}>
           {option.name}{' '}
         </label>
@@ -28,7 +27,7 @@ const VariantSelector = props => {
         </select>
         <br />
       </div>
-    </>
+    </div>
   )
 }
 

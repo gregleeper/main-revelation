@@ -24,7 +24,7 @@ const CartCounter = styled.span({
 const H1 = props => (
   <h2
     style={{
-      marginTop: '10px',
+      marginTop: '5px',
       marginLeft: '10px',
       marginBottom: '3px',
     }}
@@ -45,8 +45,8 @@ const Container = props => (
   <Flex
     {...props}
     mx="auto"
-    px={[`1.0875rem`, null, null, 0]}
-    py="1.45rem"
+    px={[`0.8rem`, null, null, 0]}
+    py="0.8rem"
     css={{
       margin: `0 auto`,
       maxWidth: 960,
@@ -78,10 +78,11 @@ const Navigation = ({ siteTitle }) => {
   return (
     <Wrapper>
       <Container>
+        {' '}
         <Box>
           <H1 to="/">Main Revelation</H1>
         </Box>
-        <Box ml="auto" style={{ marginRight: '4rem' }}>
+        <Box ml="auto" style={{ marginRight: '2rem' }}>
           <H1 to="/cart">
             {quantity !== 0 && <CartCounter>{quantity}</CartCounter>}
             Cart 🛍

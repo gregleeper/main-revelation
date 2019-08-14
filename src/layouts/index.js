@@ -140,18 +140,29 @@ class Layout extends React.Component {
               <div
                 style={{
                   margin: `0 auto`,
+                  minHeight: '100vh',
                   maxWidth: 960,
                   padding: `0px 1.0875rem 1.45rem`,
                   paddingTop: 0,
                 }}
               >
                 {children}
-                <footer>
-                  © {new Date().getFullYear()}, Main Revelation LLC Built with
-                  {` `}
-                  <a href="https://www.gatsbyjs.org">Gatsby</a>
-                </footer>
               </div>
+              <footer
+                style={{
+                  bottom: '0',
+
+                  width: '100%',
+                  height: '60px',
+                  lineHeight: '60px',
+                  backgroundColor: '#f5f5f5',
+                  textAlign: 'center',
+                }}
+              >
+                © {new Date().getFullYear()}, Main Revelation LLC, Built with
+                {` `}
+                <a href="https://www.gatsbyjs.org">Gatsby</a>
+              </footer>
             </>
           )}
         />

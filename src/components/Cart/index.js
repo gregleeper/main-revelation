@@ -18,16 +18,41 @@ const Cart = () => {
   return (
     <div>
       {line_items}
-      <h2>Subtotal</h2>
-      <p>$ {checkout.subtotalPrice}</p>
-      <br />
-      <h2>Taxes</h2>
-      <p>$ {checkout.totalTax}</p>
-      <br />
-      <h2>Total</h2>
-      <p>$ {checkout.totalPrice}</p>
-      <br />
-      <button onClick={handleCheckout}>Check out</button>
+      <div className="row mt-5">
+        <div className="col-4">
+          <h4>Subtotal</h4>
+          <p>$ {checkout.subtotalPrice}</p>
+        </div>
+        <div className="col-4">
+          <h4>Taxes</h4>
+          <p>$ {checkout.totalTax}</p>
+        </div>
+        <div className="col-4">
+          <h4>Total</h4>
+          <p>$ {checkout.totalPrice}</p>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-4">
+          {line_items.length > 0 ? (
+            <button className="btn btn-primary" onClick={handleCheckout}>
+              Check out
+            </button>
+          ) : (
+            <button
+              className="btn btn-primary"
+              onClick={handleCheckout}
+              disabled={true}
+            >
+              Check out
+            </button>
+          )}
+        </div>
+        <div className="alert alert-info col-8">
+          Use code <strong>INPERSON</strong> for free in-person pickup at 1000 S
+          Monroe in Hugoton, KS.
+        </div>
+      </div>
     </div>
   )
 }

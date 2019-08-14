@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
-import { Flex, Box } from '@rebass/grid/emotion'
 
 import ProductForm from '../../components/ProductForm'
 import { Img } from '../../utils/styles'

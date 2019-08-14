@@ -16,9 +16,15 @@ const LineItem = props => {
   ) : null
 
   const selectedOptions = line_item.variant.selectedOptions ? (
-    <>{line_item.variant.selectedOptions.map(option => {
-      return `${option.name}: ${option.value} `
-    })}</>
+    <>
+      {line_item.variant.selectedOptions.map(option => (
+        <>
+          <h6>
+            {option.name}: {option.value}
+          </h6>
+        </>
+      ))}
+    </>
   ) : null
 
   const handleRemove = () => {
@@ -28,29 +34,26 @@ const LineItem = props => {
   return (
     <Flex
       py={2}
-      flexWrap='wrap'
-      justifyContent='space-between'
-      alignItems='center'
+      flexWrap="wrap"
+      justifyContent="space-between"
+      alignItems="center"
     >
+      <Box>{variantImage}</Box>
       <Box>
-        {variantImage}
-      </Box>
-      <Box>
-        <p>
+        <h5>
           {line_item.title}
           {`  `}
-          {line_item.variant.title === ! 'Default Title' ? line_item.variant.title : ''}
-        </p>
+          {line_item.variant.title === !'Default Title'
+            ? line_item.variant.title
+            : ''}
+        </h5>
       </Box>
+      <Box>{selectedOptions}</Box>
+      <Box>{`Qty: ${line_item.quantity}`}</Box>
       <Box>
-        {selectedOptions}
-      </Box>
-      <Box>
-        {line_item.quantity}
-        {console.log(line_item)}
-      </Box>
-      <Box>
-        <button onClick={handleRemove}>Remove</button>
+        <button className="btn btn-secondary" onClick={handleRemove}>
+          Remove
+        </button>
       </Box>
     </Flex>
   )

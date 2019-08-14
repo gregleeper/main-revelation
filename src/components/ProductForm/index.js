@@ -71,9 +71,9 @@ const ProductForm = props => {
       <p>{props.product.description}</p>
       <h4>${productVariant.price}</h4>
       <form>
-        <div className="form-group">
+        <div className="form-group row">
           {variantSelectors}
-          <div className="col-lg-6">
+          <div className="col-6">
             <label htmlFor="quantity">Quantity </label>
             <input
               className="form-control"
