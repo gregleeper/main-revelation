@@ -49,8 +49,8 @@ const Cart = () => {
           )}
         </div>
         <div className="alert alert-info col-lg-8 col-md-8 col-sm-6">
-          Use code <strong>PLAYERDELIVERY</strong> for free delivery from a
-          Hugoton Volleyball player.
+          Use code <strong>PLAYERDELIVERY</strong> for free delivery{' '}
+          {`(removes shipping charges)`}from a Hugoton Volleyball player.
         </div>
       </div>
     </div>
