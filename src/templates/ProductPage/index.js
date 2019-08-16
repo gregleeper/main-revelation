@@ -6,6 +6,7 @@ import ProductForm from '../../components/ProductForm'
 import { Img } from '../../utils/styles'
 
 const ProductPage = ({ data }) => {
+  console.log(data)
   const product = data.shopifyProduct
 
   const [featuredImage, setFeaturedImage] = useState(null)
