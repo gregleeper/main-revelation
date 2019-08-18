@@ -32,9 +32,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const ProductPageTemplate = path.resolve(
     `./src/templates/ProductPage/index.js`
   )
-  // const CollectionsTemplate = path.resolve(
-  //   `./src/templates/CollectionPage/index.js`
-  // )
+  const CollectionsPageTemplate = path.resolve(
+    `./src/templates/CollectionsPage/index.js`
+  )
   const result = await graphql(`
     {
       allShopifyProduct {
@@ -48,18 +48,8 @@ exports.createPages = async ({ graphql, actions }) => {
         edges {
           node {
             id
-            description
             handle
             title
-            image {
-              localFile {
-                childImageSharp {
-                  fluid(maxWidth: 1000) {
-                    tracedSVG
-                  }
-                }
-              }
-            }
           }
         }
       }
@@ -78,16 +68,16 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 
-  // const Collections = result.data.allShopifyCollection.edges
-  // Collections.forEach(({ node }) => {
-  //   createPage({
-  //     path: `/${node.handle}/`,
-  //     component: CollectionsTemplate,
-  //     context: {
-  //       // Data passed to context is available
-  //       // in page queries as GraphQL variables.
-  //       handle: node.handle,
-  //     },
-  //   })
-  // })
+  const Collections = result.data.allShopifyCollection.edges
+  Collections.forEach(({ node }) => {
+    createPage({
+      path: `/${node.handle}/`,
+      component: CollectionsPageTemplate,
+      context: {
+        // Data passed to context is available
+        // in page queries as GraphQL variables.
+        handle: node.handle,
+      },
+    })
+  })
 }

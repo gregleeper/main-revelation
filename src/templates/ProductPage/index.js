@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
-
 import ProductForm from '../../components/ProductForm'
-import { Img } from '../../utils/styles'
 
 const ProductPage = ({ data }) => {
-  console.log(data)
   const product = data.shopifyProduct
 
   const [featuredImage, setFeaturedImage] = useState(null)
@@ -32,7 +29,7 @@ const ProductPage = ({ data }) => {
         <div className="row justify-content-between mt-4">
           {product.images.map((image, index) => (
             <div className="col-lg-4 col-sm-6" key={image.id}>
-              <a onClick={() => onImageSelect(index)}>
+              <a href="#" onClick={() => onImageSelect(index)}>
                 <Image fixed={image.localFile.childImageSharp.fixed} />
               </a>
             </div>
