@@ -4,7 +4,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: `Main Revelation LLC`,
-    description: `Shop with us to raise money for partnet programs.`,
+    description: `Shop with us to raise money for our partner programs.`,
     author: `@gregleeper`,
   },
   plugins: [
