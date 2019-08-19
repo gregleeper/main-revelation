@@ -3,9 +3,20 @@ import React from 'react'
 import SEO from '../components/seo'
 import ProductGrid from '../components/ProductGrid'
 
-const IndexPage = () => (
+const IndexPage = props => (
   <>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Home"
+      keywords={[
+        `clothing`,
+        `fan`,
+        `sports`,
+        `eagles`,
+        `hugoton`,
+        `Kansnas`,
+        `apparrel`,
+      ]}
+    />
     <h3>Main Revelation</h3>
     <p>
       Welcome to our store! We are just getting the online store started, so
@@ -20,7 +31,7 @@ const IndexPage = () => (
       </div>
     </div>
 
-    <ProductGrid />
+    <ProductGrid location={props.location} />
   </>
 )
 

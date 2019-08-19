@@ -4,7 +4,6 @@ import Image from 'gatsby-image'
 import styled from '@emotion/styled'
 
 const CollectionsPageTemplate = ({ data }) => {
-  console.log(data)
   return (
     <div className="container">
       <div className="d-flex justify-content-center">
@@ -31,6 +30,7 @@ const CollectionsPageTemplate = ({ data }) => {
                   textDecoration: 'none',
                   color: 'black',
                 }}
+                state={{ prevPath: window.location.pathname }}
               >
                 <div className="card-image">
                   <Image
@@ -109,7 +109,7 @@ export const query = graphql`
 `
 const Line = styled.hr`
   margin: 25px 0;
-  height: 1px;
+  height: 2px;
   border: 0;
   background: blue;
   background: -webkit-gradient(

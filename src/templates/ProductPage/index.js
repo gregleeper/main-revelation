@@ -29,9 +29,13 @@ const ProductPage = ({ data }) => {
         <div className="row justify-content-between mt-4">
           {product.images.map((image, index) => (
             <div className="col-lg-4 col-sm-6" key={image.id}>
-              <a href="#" onClick={() => onImageSelect(index)}>
+              <button
+                className="btn btn-link"
+                href="#"
+                onClick={() => onImageSelect(index)}
+              >
                 <Image fixed={image.localFile.childImageSharp.fixed} />
-              </a>
+              </button>
             </div>
           ))}
         </div>
