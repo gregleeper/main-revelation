@@ -17,6 +17,7 @@ const CollectionsPageTemplate = ({ data }) => {
         <p>{data.collection.description}</p>
       </div>
       <Line style={{ marginBottom: '35px' }} />
+
       <div className="row">
         {data.collection.products.map(product => (
           <div
