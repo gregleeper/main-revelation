@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
 import ProductForm from '../../components/ProductForm'
 
@@ -41,12 +41,6 @@ const ProductPage = ({ data }) => {
         </div>
       </div>
       <div className="col">
-        <Link to="/">
-          <button className="btn btn-primary mb-2">
-            {' '}
-            {`<- `}Back to Products
-          </button>
-        </Link>
         <div className="mt-3 mb-3">
           <div className="alert alert-info col-lg-8 col-md-8 col-sm-6">
             Use code <strong style={{ color: 'red' }}>PLAYERDELIVERY</strong>{' '}
