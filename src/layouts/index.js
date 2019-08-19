@@ -119,7 +119,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { children, location } = this.props
+    const { children } = this.props
 
     return (
       <StoreContext.Provider value={this.state.store}>

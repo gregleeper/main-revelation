@@ -31,7 +31,6 @@ const CollectionsPageTemplate = ({ data }) => {
                   textDecoration: 'none',
                   color: 'black',
                 }}
-                state={{ prevPath: window.location.pathname }}
               >
                 <div className="card-image">
                   <Image
