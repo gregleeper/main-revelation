@@ -14,7 +14,6 @@ const Cart = () => {
   const line_items = checkout.lineItems.map(line_item => {
     return <LineItem key={line_item.id.toString()} line_item={line_item} />
   })
-
   return (
     <div>
       {line_items}
@@ -32,8 +31,9 @@ const Cart = () => {
           <p>$ {checkout.totalPrice}</p>
         </div>
       </div>
+
       <div className="row">
-        <div className="col-lg-4 col-md-4 col-sm-6">
+        <div className="col-lg-4 col-md-4 col-sm-6 mb-3">
           {line_items.length > 0 ? (
             <button className="btn btn-primary" onClick={handleCheckout}>
               Check out

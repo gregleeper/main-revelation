@@ -111,7 +111,7 @@ const Line = styled.hr`
   margin: 25px 0;
   height: 2px;
   border: 0;
-  background: blue;
+  background: #163373;
   background: -webkit-gradient(
     linear,
     0 0,
