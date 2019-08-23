@@ -53,7 +53,6 @@ const ProductGrid = () => {
                 }}
               >
                 <div className="card-image">
-                  {console.log(product.images)}
                   <Image
                     fluid={product.images[0].localFile.childImageSharp.fluid}
                   />
