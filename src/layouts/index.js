@@ -33,6 +33,7 @@ class Layout extends React.Component {
         return client.checkout
           .addLineItems(checkoutId, lineItemsToUpdate)
           .then(checkout => {
+            console.log(checkout)
             this.setState(state => ({
               store: {
                 ...state.store,
@@ -41,6 +42,7 @@ class Layout extends React.Component {
               },
             }))
           })
+          .catch(err => console.log(err))
       },
       removeLineItem: (client, checkoutID, lineItemID) => {
         return client.checkout
@@ -123,6 +125,7 @@ class Layout extends React.Component {
 
     return (
       <StoreContext.Provider value={this.state.store}>
+        {console.log(this.state.store)}
         <GlobalStyle />
         <StaticQuery
           query={graphql`

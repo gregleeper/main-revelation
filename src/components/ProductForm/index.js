@@ -51,7 +51,6 @@ const ProductForm = props => {
 
   const handleAddToCart = () => {
     context.addVariantToCart(productVariant.shopifyId, quantity)
-    console.log(context.checkout.lineItems)
   }
 
   const variantSelectors = hasVariants

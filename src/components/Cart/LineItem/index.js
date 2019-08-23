@@ -18,7 +18,7 @@ const LineItem = props => {
   const selectedOptions = line_item.variant.selectedOptions ? (
     <>
       {line_item.variant.selectedOptions.map((option, index) => (
-        <div key={index}>
+        <div key={`${option.name}-${index}`}>
           <h6>
             {option.name}: {option.value}
           </h6>
