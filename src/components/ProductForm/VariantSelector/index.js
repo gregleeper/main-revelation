@@ -6,7 +6,7 @@ const VariantSelector = props => {
   return (
     <div className="col-6">
       <div className="form-group">
-        <label htmlFor={option.name} for={option.id}>
+        <label htmlFor={option.name} htmlFor={option.id}>
           {option.name}{' '}
         </label>
         <select
