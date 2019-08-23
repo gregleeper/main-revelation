@@ -89,7 +89,7 @@ const ProductForm = props => {
             <button
               className="btn btn-primary"
               type="submit"
-              disabled={!available}
+              disabled={!available || context.adding}
               onClick={handleAddToCart}
             >
               Add to Cart
