@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
+import { Link } from '../../utils/LinkWithLocation'
 import ProductForm from '../../components/ProductForm'
 
-const ProductPage = ({ data }) => {
+const ProductPage = ({ data, location }) => {
   const product = data.shopifyProduct
 
   const [featuredImage, setFeaturedImage] = useState(null)
@@ -42,10 +43,20 @@ const ProductPage = ({ data }) => {
       </div>
       <div className="col">
         <div className="mt-3 mb-3">
-          <div className="alert alert-info col-lg-8 col-md-8 col-sm-6">
-            Use code <strong style={{ color: 'red' }}>PLAYERDELIVERY</strong>{' '}
-            for free delivery {`(removes shipping charges)`} from a Hugoton
-            Volleyball player.
+          <div className="row">
+            <div className="col-lg-3 mb-2">
+              <Link to={location.state.prevUrl}>
+                <button className="btn btn-primary">Go Back</button>
+              </Link>
+            </div>
+            <div className="col-lg-9">
+              <div className="alert alert-info col-lg-8 col-md-8 col-sm-6">
+                Use code{' '}
+                <strong style={{ color: 'red' }}>PLAYERDELIVERY</strong> for
+                free delivery {`(removes shipping charges)`} from a Hugoton
+                Volleyball player.
+              </div>
+            </div>
           </div>
         </div>
         <ProductForm product={product} />
