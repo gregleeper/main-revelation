@@ -43,7 +43,7 @@ const ProductPage = ({ data, location }) => {
       </div>
       <div className="col">
         <div className="mt-3 mb-3">
-          {location.state.prevUrl ? (
+          {location ? (
             <div className="row">
               <div className="col-lg-3">
                 <Link to={location.state.prevUrl}>
