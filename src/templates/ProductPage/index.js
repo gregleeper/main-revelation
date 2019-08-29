@@ -43,6 +43,9 @@ const ProductPage = ({ data, location }) => {
       </div>
       <div className="col">
         <div className="mt-3 mb-3">
+          {location.state
+            ? console.log(location.state)
+            : console.log('not there')}
           <div className="alert alert-info col-lg-8 col-md-8 col-sm-6">
             Use code <strong style={{ color: 'red' }}>PLAYERDELIVERY</strong>{' '}
             for free delivery {`(removes shipping charges)`} from a Hugoton
