@@ -13,9 +13,10 @@ const Wrapper = styled.div({
 
 const CartCounter = styled.span({
   backgroundColor: `white`,
+  marginTop: '-5px',
   color: `#663399`,
   borderRadius: `20px`,
-  padding: `0 10px`,
+  padding: `0 7px`,
   fontSize: `1.2rem`,
   float: `right`,
   zIndex: 999,
@@ -45,8 +46,8 @@ const Container = props => (
   <Flex
     {...props}
     mx="auto"
-    px={[`0.8rem`, null, null, 0]}
-    py="0.8rem"
+    px={[`0.5rem`, null, null, 0]}
+    py="0.5rem"
     css={{
       margin: `0 auto`,
       maxWidth: 960,
@@ -85,7 +86,24 @@ const Navigation = ({ siteTitle }) => {
         <Box ml="auto" style={{ marginRight: '2rem' }}>
           <H1 to="/cart">
             {quantity !== 0 && <CartCounter>{quantity}</CartCounter>}
-            🛍
+
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 36 36"
+              style={{ marginRight: '-15px' }}
+              width="50"
+              height="50"
+              fill="none"
+              stroke="white"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="feather feather-shopping-cart"
+            >
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
           </H1>
         </Box>
       </Container>

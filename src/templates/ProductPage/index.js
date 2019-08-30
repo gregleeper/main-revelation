@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { graphql } from 'gatsby'
 import Image from 'gatsby-image'
-import { Link } from '../../utils/LinkWithLocation'
 import ProductForm from '../../components/ProductForm'
 
 const ProductPage = ({ data, location }) => {
