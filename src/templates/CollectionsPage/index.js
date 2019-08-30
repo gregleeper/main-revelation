@@ -74,6 +74,7 @@ export const query = graphql`
   query($handle: String!) {
     collection: shopifyCollection(handle: { eq: $handle }) {
       title
+      handle
       id
       description
       image {
