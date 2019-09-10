@@ -1,6 +1,5 @@
 import React, { useState, useContext, useEffect } from 'react'
 import PropTypes from 'prop-types'
-
 import StoreContext from '../../context/StoreContext'
 import VariantSelector from './VariantSelector'
 

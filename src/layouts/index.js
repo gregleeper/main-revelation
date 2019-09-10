@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-
 import StoreContext, { defaultStoreContext } from '../context/StoreContext'
 import { GlobalStyle } from '../utils/styles'
 import Navigation from '../components/Navigation'
@@ -25,7 +24,9 @@ class Layout extends React.Component {
         }))
 
         const { checkout, client } = this.state.store
+
         const checkoutId = checkout.id
+
         const lineItemsToUpdate = [
           { variantId, quantity: parseInt(quantity, 10) },
         ]
@@ -70,6 +71,19 @@ class Layout extends React.Component {
               },
             }))
           })
+      },
+
+      setNote: (checkoutId, note) => {
+        const { checkout } = this.state.store
+        if (checkoutId !== checkout.id) {
+          return
+        }
+        this.setState(state => ({
+          store: {
+            ...state.store,
+            note: note,
+          },
+        }))
       },
     },
   }

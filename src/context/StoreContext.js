@@ -11,10 +11,12 @@ export const defaultStoreContext = {
   adding: false,
   checkout: { lineItems: [] },
   products: [],
+  note: '',
   shop: {},
   addVariantToCart: () => {},
   removeLineItem: () => {},
   updateLineItem: () => {},
+  setNote: () => {},
 }
 
 const StoreContext = React.createContext(defaultStoreContext)

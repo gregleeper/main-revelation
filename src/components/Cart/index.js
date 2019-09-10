@@ -1,5 +1,7 @@
-import React, { useContext } from 'react'
-
+import React, { useContext, useState, useEffect } from 'react'
+import gql from 'graphql-tag'
+import styled from '@emotion/styled'
+import { useMutation } from 'react-apollo'
 import StoreContext from '../../context/StoreContext'
 import LineItem from './LineItem'
 
@@ -7,17 +9,54 @@ const Cart = () => {
   const context = useContext(StoreContext)
   const { checkout } = context
 
+  const [note, setNote] = useState('')
+
+  useEffect(() => {
+    checkForNote()
+  }, [note])
+
+  const checkForNote = () => {
+    if (context.note !== '') {
+      return context.note
+    }
+  }
+
+  const handleNoteChange = event => {
+    setNote(event.target.value)
+  }
+
   const handleCheckout = () => {
     window.open(checkout.webUrl)
   }
 
+  const addNoteToCheckout = gql`
+    mutation Add_Note($id: ID!, $note: String!) {
+      checkoutAttributesUpdateV2(checkoutId: $id, input: { note: $note }) {
+        checkout {
+          id
+          note
+        }
+        checkoutUserErrors {
+          code
+          field
+          message
+        }
+      }
+    }
+  `
+
   const line_items = checkout.lineItems.map(line_item => {
     return <LineItem key={line_item.id.toString()} line_item={line_item} />
   })
+
+  const [checkoutAttributesUpdateV2, { loading, data }] = useMutation(
+    addNoteToCheckout
+  )
   return (
     <div>
       {line_items}
-      <div className="row mt-5">
+      <Line />
+      <div className="row">
         <div className="col-4">
           <h4>Subtotal</h4>
           <p>$ {checkout.subtotalPrice}</p>
@@ -31,11 +70,59 @@ const Cart = () => {
           <p>$ {checkout.totalPrice}</p>
         </div>
       </div>
-
-      <div className="row">
-        <div className="col-lg-4 col-md-4 col-sm-6 mb-3">
+      <Line />
+      <div className="row justify-content-around">
+        <form
+          className="form-group col-md-5 col-sm-12"
+          onSubmit={e => {
+            e.preventDefault()
+            checkoutAttributesUpdateV2({
+              variables: { id: checkout.id, note: note },
+            })
+            context.setNote(checkout.id, note)
+            setNote('')
+          }}
+        >
+          <input
+            className="form-control"
+            type="text"
+            id="note"
+            name="note"
+            placeholder="Add a note here..."
+            onChange={handleNoteChange}
+            value={note}
+          />
           {line_items.length > 0 ? (
-            <button className="btn btn-primary" onClick={handleCheckout}>
+            <button
+              className="btn btn-secondary mt-2"
+              type="submit"
+              disabled={loading}
+            >
+              Add Note
+            </button>
+          ) : (
+            <button className="btn btn-secondary mt-2" type="submit" disabled>
+              Add Note
+            </button>
+          )}
+        </form>
+
+        <div
+          className="alert alert-primary col-md-5 col-sm-12"
+          style={{ width: '95%' }}
+        >
+          <h6>Order note:</h6>
+          <p>
+            {data
+              ? data.checkoutAttributesUpdateV2.checkout.note
+              : context.note}
+          </p>
+        </div>
+      </div>
+      <div className="row justify-content-center">
+        <div className="col-4 align-items-center">
+          {line_items.length > 0 ? (
+            <button className="btn-lg btn-primary " onClick={handleCheckout}>
               Check out
             </button>
           ) : (
@@ -48,14 +135,16 @@ const Cart = () => {
             </button>
           )}
         </div>
-        <div className="alert alert-info col-lg-8 col-md-8 col-sm-6">
-          Use code <strong style={{ color: 'red' }}>PLAYERDELIVERY</strong> for
-          free delivery {`(removes shipping charges)`} from a Hugoton Volleyball
-          player.
-        </div>
       </div>
     </div>
   )
 }
+
+const Line = styled.hr`
+  margin: 25px 0;
+  height: 1px;
+  border: 0;
+  background: #163372;
+`
 
 export default Cart

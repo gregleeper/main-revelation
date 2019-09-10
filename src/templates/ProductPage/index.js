@@ -41,13 +41,6 @@ const ProductPage = ({ data, location }) => {
         </div>
       </div>
       <div className="col">
-        <div className="mt-3 mb-3">
-          <div className="alert alert-info col-lg-8 col-md-8 col-sm-6">
-            Use code <strong style={{ color: 'red' }}>PLAYERDELIVERY</strong>{' '}
-            for free delivery {`(removes shipping charges)`} from a Hugoton
-            Volleyball player.
-          </div>
-        </div>
         <ProductForm product={product} />
       </div>
     </div>
