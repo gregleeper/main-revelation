@@ -50,6 +50,21 @@ const UL = styled.ul`
   }
 `
 
+const BrandLink = styled(props => <Link {...props} />)`
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #32a8a8;
+  margin-top: 10px;
+  :hover {
+    text-decoration: none;
+    color: #32a8a8;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.9rem;
+    margin-top: -10px;
+  }
+`
+
 const H1 = props => (
   <h3
     style={{
@@ -130,7 +145,7 @@ const Navigation = ({ siteTitle }) => {
         <Container>
           {' '}
           <Box mt={3}>
-            <H1 to="/">Main Revelation</H1>
+            <BrandLink to="/">Main Revelation</BrandLink>
           </Box>
           <Box
             ml="auto"
