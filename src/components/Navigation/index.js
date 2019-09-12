@@ -51,7 +51,7 @@ const UL = styled.ul`
 `
 
 const H1 = props => (
-  <h2
+  <h3
     style={{
       marginTop: '1px',
       marginLeft: '10px',
@@ -67,7 +67,7 @@ const H1 = props => (
     >
       {props.children}
     </Link>
-  </h2>
+  </h3>
 )
 
 const Container = props => (
@@ -129,7 +129,7 @@ const Navigation = ({ siteTitle }) => {
       <Wrapper>
         <Container>
           {' '}
-          <Box mt={2}>
+          <Box mt={3}>
             <H1 to="/">Main Revelation</H1>
           </Box>
           <Box
@@ -151,7 +151,7 @@ const Navigation = ({ siteTitle }) => {
               </li>
             </UL>
           </Box>
-          <Box style={{ marginRight: '1.3rem' }} mt={2}>
+          <Box style={{ marginRight: '1.3rem' }} mt={3}>
             <H1 to="/cart">
               {quantity !== 0 && <CartCounter>{quantity}</CartCounter>}
 
