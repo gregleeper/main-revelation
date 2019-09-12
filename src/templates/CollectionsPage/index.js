@@ -8,7 +8,7 @@ const CollectionsPageTemplate = ({ data }) => {
   return (
     <div className="container">
       <div className="d-flex justify-content-center">
-        <h1>{data.collection.title}</h1>
+        <h1 className="display-5">{data.collection.title}</h1>
       </div>
       <div className="d-flex justify-content-center">
         <Image fixed={data.collection.image.localFile.childImageSharp.fixed} />
@@ -17,7 +17,7 @@ const CollectionsPageTemplate = ({ data }) => {
       <div className="d-flex justify-content-center">
         <p>{data.collection.description}</p>
       </div>
-      <Line style={{ marginBottom: '35px' }} />
+      <Line />
 
       <div className="row">
         {data.collection.products.map(product => (
@@ -25,7 +25,10 @@ const CollectionsPageTemplate = ({ data }) => {
             key={product.id}
             className="col-sm-6 col-md-4 col-lg-3 align-items-stretch mb-4"
           >
-            <div className="card bg-light border-light shadow">
+            <div
+              className="card bg-light border-light shadow"
+              style={{ border: '0.5px solid #e8e7e6' }}
+            >
               <Link
                 to={`/product/${product.handle}`}
                 style={{
@@ -50,6 +53,10 @@ const CollectionsPageTemplate = ({ data }) => {
                     width: '100%',
                     bottom: '0',
                     marginTop: '2px',
+                    color: '#32a8a8',
+                    fontWeight: 'bold',
+                    backgroundColor: '#d0dbda',
+                    borderTopColor: '#32a8a8',
                   }}
                 >
                   <div
@@ -113,14 +120,14 @@ const Line = styled.hr`
   margin: 25px 0;
   height: 2px;
   border: 0;
-  background: #163372;
+  background: #32a8a8;
   background: -webkit-gradient(
     linear,
     0 0,
     100% 0,
     from(white),
     to(white),
-    color-stop(50%, blue)
+    color-stop(50%, #32a8a8)
   );
 `
 export default CollectionsPageTemplate

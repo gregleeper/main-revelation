@@ -170,7 +170,7 @@ class Layout extends React.Component {
                   width: '100%',
                   height: '60px',
                   lineHeight: '60px',
-                  backgroundColor: '#f5f5f5',
+                  backgroundColor: '#e8e7e6',
                   textAlign: 'center',
                 }}
               >

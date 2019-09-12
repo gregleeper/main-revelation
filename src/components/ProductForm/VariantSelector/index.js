@@ -16,10 +16,9 @@ const VariantSelector = props => {
         >
           {option.values.map(value => {
             return (
-              <option
-                value={value}
-                key={`${option.name}-${value}`}
-              >{`${value}`}</option>
+              <option value={value} key={`${option.name}-${value}`}>
+                {`${value}`.toLowerCase()}
+              </option>
             )
           })}
         </select>

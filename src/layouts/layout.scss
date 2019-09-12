@@ -5,6 +5,12 @@
   font-family: 'Tahoma', sans-serif;
 }
 
+$theme-colors: (
+  'primary': #32a8a8,
+  'danger': #ff4136,
+  'secondary': #a83232,
+);
+
 :root {
   --hrcBlue: #4d59ee;
   --hrcBlueInvert: #fff;

@@ -20,7 +20,7 @@ const LineItem = props => {
       {line_item.variant.selectedOptions.map((option, index) => (
         <div key={`${option.name}-${index}`}>
           <h6>
-            {option.name}: {option.value}
+            {option.name}: {option.value.toLowerCase()}
           </h6>
         </div>
       ))}

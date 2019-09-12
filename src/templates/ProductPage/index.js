@@ -19,7 +19,7 @@ const ProductPage = ({ data, location }) => {
 
   return (
     <div className="row mt-5">
-      <div className="col">
+      <div className="col-md-6">
         {featuredImage ? (
           <Image className="img-fluid rounded" fluid={featuredImage} />
         ) : (
@@ -28,7 +28,7 @@ const ProductPage = ({ data, location }) => {
 
         <div className="row justify-content-between mt-4">
           {product.images.map((image, index) => (
-            <div className="col-lg-4 col-sm-6" key={image.id}>
+            <div className="col" key={image.id}>
               <button
                 className="btn btn-link"
                 href="#"
@@ -40,7 +40,7 @@ const ProductPage = ({ data, location }) => {
           ))}
         </div>
       </div>
-      <div className="col">
+      <div className="col-md-6">
         <ProductForm product={product} />
       </div>
     </div>
@@ -81,7 +81,7 @@ export const query = graphql`
             fluid(maxWidth: 910) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
-            fixed(width: 150, height: 150, cropFocus: CENTER) {
+            fixed(width: 100, height: 100, cropFocus: CENTER) {
               ...GatsbyImageSharpFixed
             }
           }

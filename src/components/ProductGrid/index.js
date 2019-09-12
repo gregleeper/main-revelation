@@ -45,7 +45,10 @@ const ProductGrid = () => {
             key={product.id}
             className="col-sm-6 col-md-4 col-lg-3 align-items-stretch mb-4"
           >
-            <div className="card bg-light border-light shadow">
+            <div
+              className="card bg-light shadow"
+              style={{ border: '0.5px solid #e8e7e6' }}
+            >
               <Link
                 to={`/product/${product.handle}`}
                 style={{
@@ -70,6 +73,10 @@ const ProductGrid = () => {
                     width: '100%',
                     bottom: '0',
                     marginTop: '2px',
+                    color: '#32a8a8',
+                    fontWeight: 'bold',
+                    backgroundColor: '#d0dbda',
+                    borderTopColor: '#32a8a8',
                   }}
                 >
                   <div

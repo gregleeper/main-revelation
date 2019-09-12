@@ -54,7 +54,12 @@ const Cart = () => {
   )
   return (
     <div>
-      {line_items}
+      {checkout.lineItems.length > 0 ? (
+        line_items
+      ) : (
+        <h4>Your cart is empty!</h4>
+      )}
+
       <Line />
       <div className="row">
         <div className="col-4">
@@ -63,7 +68,7 @@ const Cart = () => {
         </div>
         <div className="col-4">
           <h4>Taxes</h4>
-          <p>$ {checkout.totalTax}</p>
+          <p>calculated at checkout</p>
         </div>
         <div className="col-4">
           <h4>Total</h4>
@@ -96,7 +101,7 @@ const Cart = () => {
             <button
               className="btn btn-secondary mt-2"
               type="submit"
-              disabled={loading}
+              disabled={loading || note === ''}
             >
               Add Note
             </button>
@@ -119,22 +124,20 @@ const Cart = () => {
           </p>
         </div>
       </div>
-      <div className="row justify-content-center">
-        <div className="col-4 align-items-center">
-          {line_items.length > 0 ? (
-            <button className="btn-lg btn-primary " onClick={handleCheckout}>
-              Check out
-            </button>
-          ) : (
-            <button
-              className="btn btn-primary"
-              onClick={handleCheckout}
-              disabled={true}
-            >
-              Check out
-            </button>
-          )}
-        </div>
+      <div className="row justify-content-center mt-5">
+        {line_items.length > 0 ? (
+          <button className="btn-lg btn-primary " onClick={handleCheckout}>
+            Check out
+          </button>
+        ) : (
+          <button
+            className="btn btn-primary"
+            onClick={handleCheckout}
+            disabled={true}
+          >
+            Check out
+          </button>
+        )}
       </div>
     </div>
   )
