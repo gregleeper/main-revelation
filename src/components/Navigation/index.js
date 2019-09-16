@@ -144,7 +144,7 @@ const Navigation = ({ siteTitle }) => {
       <Wrapper>
         <Container>
           {' '}
-          <Box mt={3}>
+          <Box mt={3} ml={2}>
             <BrandLink to="/">Main Revelation</BrandLink>
           </Box>
           <Box
