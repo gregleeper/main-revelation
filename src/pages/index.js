@@ -17,11 +17,6 @@ const IndexPage = props => (
       ]}
     />
     <h3>Main Revelation</h3>
-    <p>
-      Welcome to our store! We are just getting the online store started, so
-      feel free to browse our products and support{' '}
-      <strong style={{ color: 'blue' }}>Hugoton High School Volleyball</strong>.
-    </p>
 
     <ProductGrid location={props.location} />
   </>
