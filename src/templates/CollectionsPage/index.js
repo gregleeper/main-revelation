@@ -8,7 +8,9 @@ const CollectionsPageTemplate = ({ data }) => {
   return (
     <div className="container">
       <div className="d-flex justify-content-center">
-        <h1 className="display-5">{data.collection.title}</h1>
+        <h1 className="display-5" style={{ textAlign: 'center' }}>
+          {data.collection.title}
+        </h1>
       </div>
       <div className="d-flex justify-content-center">
         <Image fixed={data.collection.image.localFile.childImageSharp.fixed} />
