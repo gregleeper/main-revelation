@@ -68,9 +68,9 @@ const ProductForm = props => {
     <>
       <h3>{props.product.title}</h3>
       {console.log(props.product.descriptionHtml)}
-      <p
-        dangerouslySetInnerHTML={{ __html: props.product.descriptionHtml }}
-      ></p>
+      <p dangerouslySetInnerHTML={{ __html: props.product.descriptionHtml }}>
+        here
+      </p>
       <h4>${productVariant.price}</h4>
       <form>
         <div className="form-group row">
