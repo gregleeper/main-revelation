@@ -67,10 +67,14 @@ const ProductForm = props => {
   return (
     <>
       <h3>{props.product.title}</h3>
+<<<<<<< HEAD
       {console.log(props.product.descriptionHtml)}
       <p dangerouslySetInnerHTML={{ __html: props.product.descriptionHtml }}>
         here
       </p>
+=======
+      <p>{props.product.description}</p>
+>>>>>>> 5f5f5f8900547a1609d921065203fdad691359c2
       <h4>${productVariant.price}</h4>
       <form>
         <div className="form-group row">
