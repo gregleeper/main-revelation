@@ -135,7 +135,6 @@ const Navigation = ({ siteTitle }) => {
   }, [checkout])
 
   const handleMenuOpen = () => {
-    console.log(isMenuOpen)
     setIsMenuOpen(!isMenuOpen)
   }
 
