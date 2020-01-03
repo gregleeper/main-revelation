@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tahoma', sans-serif;
+}
+
+$theme-colors: (
+  'primary': #32a8a8,
+  'danger': #ff4136,
+  'secondary': #a83232,
+);
+
+:root {
+  --hrcBlue: #4d59ee;
+  --hrcBlueInvert: #fff;
+  --hrcRed: #d60e0e;
+  --hrcGray: #9b9999;
+}
+.deskTel {
+  display: none;
+  @media (min-width: 768px) {
+    display: inherit;
+  }
+}
+
+.mobileTel {
+  text-align: center;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
