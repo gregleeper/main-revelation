@@ -134,15 +134,9 @@ const Navigation = ({ siteTitle }) => {
     countQuantity(checkout ? checkout.lineItems : [])
   )
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
   useEffect(() => {
     setQuantity(countQuantity(checkout ? checkout.lineItems : []))
   }, [checkout])
-
-  const handleMenuOpen = () => {
-    setIsMenuOpen(!isMenuOpen)
-  }
 
   return (
     <nav>
@@ -166,14 +160,11 @@ const Navigation = ({ siteTitle }) => {
             }}
           >
             <UL>
-              <li>
-                <button onClick={handleMenuOpen} style={{}}>
+              <li className="dropdown show">
+                <button className="dropdown-toggle" data-toggle="dropdown">
                   Collections
                 </button>
-                <CollectionsSubMenu
-                  isMenuOpen={isMenuOpen}
-                  toggleMenu={handleMenuOpen}
-                />
+                <CollectionsSubMenu />
               </li>
             </UL>
           </Box>

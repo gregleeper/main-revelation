@@ -55,10 +55,10 @@ const CollectionsPageTemplate = ({ data }) => {
                     width: '100%',
                     bottom: '0',
                     marginTop: '2px',
-                    color: '#32a8a8',
+                    color: '#7348a8',
                     fontWeight: 'bold',
-                    backgroundColor: '#d0dbda',
-                    borderTopColor: '#32a8a8',
+                    backgroundColor: '#edeee8',
+                    borderTopColor: '#7348a8',
                   }}
                 >
                   <div
@@ -122,14 +122,14 @@ const Line = styled.hr`
   margin: 25px 0;
   height: 2px;
   border: 0;
-  background: #32a8a8;
+  background: #7348a8;
   background: -webkit-gradient(
     linear,
     0 0,
     100% 0,
     from(white),
     to(white),
-    color-stop(50%, #32a8a8)
+    color-stop(50%, #7348a8)
   );
 `
 export default CollectionsPageTemplate

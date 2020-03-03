@@ -5,5 +5,8 @@
  */
 
 // You can delete this file if you're not using it
+import 'popper.js/dist/popper.min'
+import 'bootstrap/dist/js/bootstrap.min.js'
+import 'jquery/dist/jquery.min.js'
 
 export { wrapRootElement } from './inject-provider'

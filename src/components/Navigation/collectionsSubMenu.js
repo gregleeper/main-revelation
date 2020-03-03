@@ -16,29 +16,29 @@ const CollectionsSubMenu = props => {
       }
     `
   )
+  console.log(data)
 
   return (
-    props.isMenuOpen && (
-      <StyledSubMenu>
-        {data.allShopifyCollection.nodes.map(collection => (
-          <li key={collection.id}>
-            <MenuLink to={`/${collection.handle}`} onClick={props.toggleMenu}>
-              {collection.title}
-            </MenuLink>
-          </li>
-        ))}
-      </StyledSubMenu>
-    )
+    <div className="dropdown-menu">
+      {data.allShopifyCollection.nodes.map(collection => (
+        <a className="dropdown-item" key={collection.id}>
+          <MenuLink to={`/${collection.handle}`} onClick={props.toggleMenu}>
+            {collection.title}
+          </MenuLink>
+        </a>
+      ))}
+    </div>
   )
 }
 
 const MenuLink = styled(props => <Link {...props} />)`
-  color: white;
+  color: black;
   font-size: 15px;
   :hover {
     text-decoration: none;
-    color: white;
+    color: black;
   }
+  position: relative;
 `
 
 const StyledSubMenu = styled.ul`
@@ -49,6 +49,7 @@ const StyledSubMenu = styled.ul`
     position: absolute;
     background: #7348a8;
   }
+  height: 400px;
 `
 
 export default CollectionsSubMenu
