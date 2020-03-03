@@ -3,18 +3,18 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import styled from '@emotion/styled'
 import { Flex, Box } from '@rebass/grid/emotion'
-
 import StoreContext from '../../context/StoreContext'
 import CollectionsSubMenu from './collectionsSubMenu'
+import mainRevelation from '../../images/mainrev.png'
 
 const Wrapper = styled.div({
-  background: `white`,
-  borderBottom: '1.5px solid #32a8a8',
+  background: `#edeee8`,
+  borderBottom: '1.5px solid #7348a8',
   marginBottom: `2rem`,
 })
 
 const CartCounter = styled.span({
-  backgroundColor: `#32a8a8`,
+  backgroundColor: `#7348a8`,
   marginTop: '-5px',
   color: `white`,
   borderRadius: `20px`,
@@ -25,24 +25,24 @@ const CartCounter = styled.span({
 })
 
 const UL = styled.ul`
-  color: #32a8a8;
+  color: #7348a8;
   > ul {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
   }
   li {
     display: block;
     position: relative;
-
-    width: 180px;
-    padding: 10px 20px;
+    font-size: 1.3rem;
+    width: 140px;
+    padding: 10px 10px;
   }
 
   button {
     background: none;
     border: none;
     padding: 0;
-    color: #32a8a8;
+    color: #7348a8;
     box-sizing: content-box;
     :focus {
       outline-style: none;
@@ -51,10 +51,11 @@ const UL = styled.ul`
 `
 
 const BrandLink = styled(props => <Link {...props} />)`
-  font-size: 1.3rem;
-  text-decoration: none;
-  color: #32a8a8;
-  margin-top: 10px;
+  img {
+    height: 60px;
+    width: auto;
+    margin-top: 0px;
+  }
   :hover {
     text-decoration: none;
     color: #32a8a8;
@@ -62,6 +63,11 @@ const BrandLink = styled(props => <Link {...props} />)`
   @media (min-width: 768px) {
     font-size: 1.9rem;
     margin-top: -10px;
+    img {
+      height: 60px;
+      width: 300px;
+      margin-top: 1px;
+    }
   }
 `
 
@@ -143,8 +149,14 @@ const Navigation = ({ siteTitle }) => {
       <Wrapper>
         <Container>
           {' '}
-          <Box mt={3} ml={2}>
-            <BrandLink to="/">Main Revelation</BrandLink>
+          <Box mt={2} ml={2}>
+            <BrandLink to="/">
+              <img
+                style={{ borderRadius: '20px' }}
+                src={mainRevelation}
+                alt="Main Revelation logo"
+              />
+            </BrandLink>
           </Box>
           <Box
             ml="auto"
@@ -154,7 +166,7 @@ const Navigation = ({ siteTitle }) => {
             }}
           >
             <UL>
-              <li style={{ fontSize: '1.3rem' }}>
+              <li>
                 <button onClick={handleMenuOpen} style={{}}>
                   Collections
                 </button>
@@ -176,7 +188,7 @@ const Navigation = ({ siteTitle }) => {
                 width="50"
                 height="50"
                 fill="none"
-                stroke="#32a8a8"
+                stroke="#7348a8"
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"

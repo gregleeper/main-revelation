@@ -22,11 +22,7 @@ const CollectionsSubMenu = props => {
       <StyledSubMenu>
         {data.allShopifyCollection.nodes.map(collection => (
           <li key={collection.id}>
-            <MenuLink
-              to={`/${collection.handle}`}
-              style={{ fontSize: '1.1rem' }}
-              onClick={props.toggleMenu}
-            >
+            <MenuLink to={`/${collection.handle}`} onClick={props.toggleMenu}>
               {collection.title}
             </MenuLink>
           </li>
@@ -37,13 +33,12 @@ const CollectionsSubMenu = props => {
 }
 
 const MenuLink = styled(props => <Link {...props} />)`
-  font-size: 0.7rem;
   color: white;
+  font-size: 15px;
   :hover {
     text-decoration: none;
     color: white;
   }
-  margin-left: 10px;
 `
 
 const StyledSubMenu = styled.ul`
@@ -52,7 +47,7 @@ const StyledSubMenu = styled.ul`
     padding: 0;
     display: block;
     position: absolute;
-    background: #32a8a8;
+    background: #7348a8;
   }
 `
 

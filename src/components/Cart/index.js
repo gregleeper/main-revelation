@@ -99,14 +99,18 @@ const Cart = () => {
           />
           {line_items.length > 0 ? (
             <button
-              className="btn btn-secondary mt-2"
+              className="btn btn-outline-dark mt-2"
               type="submit"
               disabled={loading || note === ''}
             >
               Add Note
             </button>
           ) : (
-            <button className="btn btn-secondary mt-2" type="submit" disabled>
+            <button
+              className="btn btn-outline-dark mt-2"
+              type="submit"
+              disabled
+            >
               Add Note
             </button>
           )}

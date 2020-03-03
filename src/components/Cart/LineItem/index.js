@@ -51,9 +51,9 @@ const LineItem = props => {
       <Box>{selectedOptions}</Box>
       <Box>{`Qty: ${line_item.quantity}`}</Box>
       <Box>
-        <button className="btn btn-secondary" onClick={handleRemove}>
+        <a style={{ color: '#ff4d4d' }} onClick={handleRemove}>
           Remove
-        </button>
+        </a>
       </Box>
     </Flex>
   )

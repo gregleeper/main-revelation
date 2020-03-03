@@ -73,10 +73,10 @@ const ProductGrid = () => {
                     width: '100%',
                     bottom: '0',
                     marginTop: '2px',
-                    color: '#32a8a8',
+                    color: '#7348a8',
                     fontWeight: 'bold',
-                    backgroundColor: '#d0dbda',
-                    borderTopColor: '#32a8a8',
+                    backgroundColor: '#edeee8',
+                    borderTopColor: '#7348a8',
                   }}
                 >
                   <div

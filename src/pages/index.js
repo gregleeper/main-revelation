@@ -16,7 +16,6 @@ const IndexPage = props => (
         `apparrel`,
       ]}
     />
-    <h3>Main Revelation</h3>
 
     <ProductGrid location={props.location} />
   </>
