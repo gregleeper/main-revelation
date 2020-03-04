@@ -21,25 +21,28 @@ const CollectionsSubMenu = props => {
   return (
     <div className="dropdown-menu">
       {data.allShopifyCollection.nodes.map(collection => (
-        <a className="dropdown-item" key={collection.id}>
-          <MenuLink to={`/${collection.handle}`} onClick={props.toggleMenu}>
-            {collection.title}
-          </MenuLink>
-        </a>
+        <Link
+          className="dropdown-item"
+          to={`/${collection.handle}`}
+          onClick={props.toggleMenu}
+          key={collection.id}
+        >
+          {collection.title}
+        </Link>
       ))}
     </div>
   )
 }
 
-const MenuLink = styled(props => <Link {...props} />)`
-  color: black;
-  font-size: 15px;
-  :hover {
-    text-decoration: none;
-    color: black;
-  }
-  position: relative;
-`
+// const MenuLink = styled(props => <Link {...props} />)`
+//   color: black;
+//   font-size: 15px;
+//   :hover {
+//     text-decoration: none;
+//     color: black;
+//   }
+//   position: relative;
+// `
 
 const StyledSubMenu = styled.ul`
   li {
