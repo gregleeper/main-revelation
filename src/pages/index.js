@@ -1,7 +1,7 @@
 import React from 'react'
 import SEO from '../components/seo'
 import ProductGrid from '../components/ProductGrid'
-
+import { Link } from 'gatsby'
 const IndexPage = props => (
   <>
     <SEO
@@ -16,7 +16,7 @@ const IndexPage = props => (
         `apparrel`,
       ]}
     />
-
+    <div></div>
     <ProductGrid location={props.location} />
   </>
 )

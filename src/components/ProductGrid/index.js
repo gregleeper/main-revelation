@@ -3,7 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import { Link } from '../../utils/LinkWithLocation'
 import Image from 'gatsby-image'
 
-const ProductGrid = () => {
+const ProductGrid = props => {
   const data = useStaticQuery(
     graphql`
       query {

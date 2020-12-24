@@ -35,6 +35,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const CollectionsPageTemplate = path.resolve(
     `./src/templates/CollectionsPage/index.js`
   )
+  const ProductTypes = path.resolve(`./src/templates/ProductTypes/index.js`)
   const result = await graphql(`
     {
       allShopifyProduct {
@@ -50,6 +51,14 @@ exports.createPages = async ({ graphql, actions }) => {
             id
             handle
             title
+          }
+        }
+      }
+      allShopifyProductType {
+        edges {
+          node {
+            id
+            name
           }
         }
       }
@@ -78,6 +87,15 @@ exports.createPages = async ({ graphql, actions }) => {
         // in page queries as GraphQL variables.
         handle: node.handle,
       },
+    })
+  })
+
+  const ProductTypeFilters = result.data.allShopifyProductType.edges
+  ProductTypeFilters.forEach(({ node }) => {
+    createPage({
+      path: `/product-type/${node.name}`,
+      component: ProductTypes,
+      context: { name: node.name },
     })
   })
 }

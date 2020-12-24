@@ -16,7 +16,6 @@ const CollectionsSubMenu = props => {
       }
     `
   )
-  console.log(data)
 
   return (
     <div className="dropdown-menu">
